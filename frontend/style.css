@@ -1,77 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
-  background: #f5fcef;
+  background: linear-gradient(135deg, #f5fcef 0%, #eef7e6 50%, #f8faf5 100%);
   color: #1f2933;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  max-width: 520px;
-  margin: 80px auto;
-  padding: 24px;
+  width: 100%;
+  max-width: 560px;
+  padding: 32px 24px;
 }
 
 h1 {
-  margin-bottom: 8px;
+  margin: 0 0 20px;
   text-align: center;
-  padding-bottom: 24px;
+  font-size: 36px;
+  color: #24351d;
+  letter-spacing: -1px;
 }
 
 .subtitle {
   color: #5c6670;
-  margin-bottom: 24px;
-}
-
-input:focus {
-  outline: none;
-  border-color: #40682d;
-  box-shadow: 0 0 0 3px rgba(64, 104, 45, 0.2);
+  margin: 0 auto 40px;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 420px;
+  font-style: italic;
 }
 
 .card {
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(64, 104, 45, 0.14);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  border: 1px solid rgba(64, 104, 45, 0.12);
 }
 
 label {
   font-weight: bold;
   margin-top: 8px;
+  color: #2f3f2a;
+  font-size: 14px;
 }
 
 input {
-  padding: 12px;
-  border: 1px solid #d0d7de;
-  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid #cfd9c6;
+  border-radius: 12px;
   font-size: 16px;
+  background: #ffffff;
+  color: #1f2933;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+input::placeholder {
+  color: #9aa68f;
+}
+
+input:focus {
+  outline: none;
+  border-color: #40682d;
+  box-shadow: 0 0 0 4px rgba(64, 104, 45, 0.18);
+  transform: translateY(-1px);
 }
 
 button {
-  margin-top: 16px;
-  padding: 12px;
+  margin-top: 18px;
+  padding: 14px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   background: #40682d;
   color: white;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 12px 24px rgba(64, 104, 45, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.02);
-  background: #40682d;
+  transform: translateY(-2px);
+  background: #345624;
+  box-shadow: 0 16px 32px rgba(64, 104, 45, 0.34);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(64, 104, 45, 0.25);
 }
 
 .result {
   margin-top: 24px;
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(64, 104, 45, 0.12);
+  border: 1px solid rgba(64, 104, 45, 0.12);
+  animation: fadeIn 0.25s ease;
 }
 
 .hidden {
@@ -79,7 +121,50 @@ button:hover {
 }
 
 .recommendation {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: #24351d;
+}
+
+.result p {
+  margin: 8px 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.result strong {
+  color: #24351d;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 40px 18px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .card,
+  .result {
+    padding: 22px;
+    border-radius: 18px;
+  }
 }
