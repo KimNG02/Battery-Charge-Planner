@@ -1,7 +1,4 @@
 # Battery Charge Planner
-
-A simple full-stack energy optimization tool built with **C# ASP.NET Core** and **JavaScript**.
-
 The application gives a recommendation based on the current battery level and electricity price. It can suggest whether the user should charge the battery, use battery power, save battery, or do nothing.
 <img width="1507" height="759" alt="battery_charge_planner" src="https://github.com/user-attachments/assets/b11bc175-0554-4e2f-8817-99a4097cdacd" />
 
