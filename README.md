@@ -30,11 +30,12 @@ The application gives a recommendation based on the current battery level and el
 
 ## How It Works
 
-The frontend sends a request to the C# backend with:
-
-```json
-{
-  "batteryLevel": 40,
-  "electricityPrice": 0.8
-}
-```
+User types values in the website
+↓
+JavaScript sends the values to C# backend
+↓
+C# backend checks the values and makes a recommendation
+↓
+JavaScript receives the answer
+↓
+Website shows the result
