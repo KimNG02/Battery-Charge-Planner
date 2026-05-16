@@ -27,12 +27,8 @@ The application gives a recommendation based on the current battery level and el
 
 ## How It Works
 
-User types values in the website
-↓
-JavaScript sends the values to C# backend
-↓
-C# backend checks the values and makes a recommendation
-↓
-JavaScript receives the answer
-↓
-Website shows the result
+1. The user types values into the website.
+2. JavaScript sends the values to the C# backend.
+3. The C# backend checks the values and creates a recommendation.
+4. JavaScript receives the answer from the backend.
+5. The website shows the result to the user.
